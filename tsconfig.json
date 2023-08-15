@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "baseUrl": "./src",
+    "lib": ["es2020"],
+    "module": "es2020",
+    "outDir": "dist",
+    "moduleResolution": "node",
+    "paths": {
+      "@config/*": ["config/*"],
+      "@controllers/*": ["controllers/*"],
+      "@helpers/*": ["helpers/*"],
+      "@models/*": ["models/*"],
+      "@services/*": ["services/*"],
+      "@routes/*": ["routes/*"]
+    },
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "rootDir": ".",
+    "sourceMap": true,
+    "target": "es2020",
+    "typeRoots": ["./node_modules/@types"]
+  },
+  "include": ["src/**/*"]
+}
