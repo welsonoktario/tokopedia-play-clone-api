@@ -1,0 +1,1065 @@
+{
+	"info": {
+		"_postman_id": "e35a7d34-45bd-4061-9f89-ae2d9e7fac77",
+		"name": "GIGIH - Tokopedia Play Clone",
+		"description": "GIGIH - Tokopedia Play Clone API Documentation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28036821"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"james2\",\r\n    \"avatarUrl\": \"https://ui-avatars.com/api/?name=james2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/users",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						},
+						"description": "Create a new user"
+					},
+					"response": [
+						{
+							"name": "Create User Example Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"james\",\r\n    \"avatarUrl\": \"https://ui-avatars.com/api/?name=james\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{apiUrl}}/users",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "178"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b2-SzvLjnqYwEJ/Z0J/SBoZNTQmmyI\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 28 Jul 2023 04:48:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"data\": {\n        \"user\": {\n            \"username\": \"james\",\n            \"avatarUrl\": \"https://ui-avatars.com/api/?name=james\",\n            \"_id\": \"64c348b83e970e5b46e3f781\",\n            \"__v\": 0\n        }\n    },\n    \"msg\": \"User successfully added\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Find All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/users",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Find All Users Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{apiUrl}}/users",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "266"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"10a-GJnxvADYDCXk8JcSAiGhoZ6cOXg\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 28 Jul 2023 04:49:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"data\": {\n        \"users\": [\n            {\n                \"_id\": \"64c2e2b4a088948f13b0f950\",\n                \"username\": \"welson\",\n                \"avatarUrl\": \"https://ui-avatars.com/api/?name=welson\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"64c348b83e970e5b46e3f781\",\n                \"username\": \"james\",\n                \"avatarUrl\": \"https://ui-avatars.com/api/?name=james\",\n                \"__v\": 0\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Find User by Username",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/users/:username",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"users",
+								":username"
+							],
+							"variable": [
+								{
+									"key": "username",
+									"value": "welson",
+									"description": "User's username"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Find User by Username Example Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{apiUrl}}/users/:username",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"users",
+										":username"
+									],
+									"variable": [
+										{
+											"key": "username",
+											"value": "welson",
+											"description": "User's username"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "148"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"94-vEBX+kad0P05wxRuJ6Z63PrUVPQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 28 Jul 2023 04:49:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"data\": {\n        \"user\": {\n            \"_id\": \"64c2e2b4a088948f13b0f950\",\n            \"username\": \"welson\",\n            \"avatarUrl\": \"https://ui-avatars.com/api/?name=welson\",\n            \"__v\": 0\n        }\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "User routes"
+		},
+		{
+			"name": "Videos",
+			"item": [
+				{
+					"name": "Create Video",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"welson\",\r\n    \"title\": \"5 HP IPHONE PALING MURAH TAPI WORTH IT DI JULI 2023\",\r\n    \"embedUrl\": \"https://www.youtube.com/embed/P0nN5Nkj7kg?autoplay=1&modestbranding=1\",\r\n    \"thumbnailUrl\": \"https://picsum.photos/1920/1080\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/videos",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"videos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Video",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"welson\",\r\n    \"title\": \"5 HP IPHONE PALING MURAH TAPI WORTH IT DI JULI 2023\",\r\n    \"embedUrl\": \"https://www.youtube.com/embed/P0nN5Nkj7kg?autoplay=1&modestbranding=1\",\r\n    \"thumbnailUrl\": \"https://picsum.photos/1920/1080\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{apiUrl}}/videos",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"videos"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "354"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"162-yC3Lrm1p44E6IkqRYQfxsjfFB+E\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Aug 2023 05:51:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"data\": {\n        \"user\": \"64c2e2b4a088948f13b0f950\",\n        \"title\": \"5 HP IPHONE PALING MURAH TAPI WORTH IT DI JULI 2023\",\n        \"embedUrl\": \"https://www.youtube.com/embed/P0nN5Nkj7kg?autoplay=1&modestbranding=1\",\n        \"thumbnailUrl\": \"https://picsum.photos/1920/1080\",\n        \"_id\": \"64db127a1c0afa21f92b82c7\",\n        \"products\": [],\n        \"comments\": [],\n        \"__v\": 0\n    },\n    \"msg\": \"Video successfully added\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Find All Videos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/videos",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"videos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Find All Videos Example Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{apiUrl}}/videos",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"videos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "494"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ee-RS+WWPs0MkjO2MxQUzsJ4zO6c7s\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Aug 2023 05:40:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"data\": [\n        {\n            \"_id\": \"64c2f466755e94df8d5b998e\",\n            \"user\": {\n                \"_id\": \"64c2e2b4a088948f13b0f950\",\n                \"username\": \"welson\",\n                \"avatarUrl\": \"https://ui-avatars.com/api/?name=welson\",\n                \"__v\": 0\n            },\n            \"thumbnailUrl\": \"https://picsum.photos/1024/576\",\n            \"title\": \"PROMO Heboh!!1!1!\"\n        },\n        {\n            \"_id\": \"64daf5ca45e7f2aac470468f\",\n            \"user\": {\n                \"_id\": \"64c2e2b4a088948f13b0f950\",\n                \"username\": \"welson\",\n                \"avatarUrl\": \"https://ui-avatars.com/api/?name=welson\",\n                \"__v\": 0\n            },\n            \"thumbnailUrl\": \"https://picsum.photos/1024/576\",\n            \"title\": \"AAAAAaaaaa!11!1!!\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Find Video by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/videos/:videoId",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"videos",
+								":videoId"
+							],
+							"variable": [
+								{
+									"key": "videoId",
+									"value": "64daf5ca45e7f2aac470468f",
+									"description": "Video ObjectId string"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Find Video by ID Example Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{apiUrl}}/videos/:videoId",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"videos",
+										":videoId"
+									],
+									"variable": [
+										{
+											"key": "videoId",
+											"value": "64daf5ca45e7f2aac470468f",
+											"description": "Video ObjectId string"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2862"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b2e-xq/fmy9RJChcwzGyrj2Fy4kKnKs\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Aug 2023 05:45:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"data\": {\n        \"_id\": \"64daf5ca45e7f2aac470468f\",\n        \"user\": \"64c2e2b4a088948f13b0f950\",\n        \"thumbnailUrl\": \"https://picsum.photos/1024/576\",\n        \"products\": [\n            {\n                \"title\": \"iPhone 14 Pro 128GB - Space Black\",\n                \"price\": 14000000,\n                \"_id\": \"64c33f0b03ce9022840f5626\",\n                \"thumbnailUrl\": \"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-pro-finish-select-202209-6-1inch-spaceblack?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1663703840510\",\n                \"url\": \"https://www.tokopedia.com/ismileofficial/apple-iphone-14-pro-garansi-resmi-128gb-256gb-512gb-1tb-256gb-space-black\"\n            },\n            {\n                \"title\": \"iPhone 14 Pro 256GB - Space Black\",\n                \"price\": 14000000,\n                \"_id\": \"64c33f0b03ce9022840f5627\",\n                \"thumbnailUrl\": \"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-pro-finish-select-202209-6-1inch-spaceblack?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1663703840510\",\n                \"url\": \"https://www.tokopedia.com/ismileofficial/apple-iphone-14-pro-garansi-resmi-128gb-256gb-512gb-1tb-256gb-space-black\"\n            },\n            {\n                \"title\": \"iPhone 14 Pro 512GB - Space Black\",\n                \"price\": 14000000,\n                \"_id\": \"64c33f0b03ce9022840f5628\",\n                \"thumbnailUrl\": \"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-pro-finish-select-202209-6-1inch-spaceblack?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1663703840510\",\n                \"url\": \"https://www.tokopedia.com/ismileofficial/apple-iphone-14-pro-garansi-resmi-128gb-256gb-512gb-1tb-256gb-space-black\"\n            },\n            {\n                \"title\": \"iPhone 14 Pro 1TB - Space Black\",\n                \"price\": 14000000,\n                \"_id\": \"64c33f0b03ce9022840f5629\",\n                \"thumbnailUrl\": \"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-pro-finish-select-202209-6-1inch-spaceblack?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1663703840510\",\n                \"url\": \"https://www.tokopedia.com/ismileofficial/apple-iphone-14-pro-garansi-resmi-128gb-256gb-512gb-1tb-256gb-space-black\"\n            },\n            {\n                \"title\": \"iPhone 14 Pro 256GB - Yellow\",\n                \"price\": 14200000,\n                \"url\": \"https://www.tokopedia.com/chocoapple/ibox-apple-iphone-14-plus-14plus-14-14-yellow-512gb-256gb-128gb-tam-14-128gb-fa757\",\n                \"thumbnailUrl\": \"https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-iPhone-14-Plus-yellow-2up-230307_inline.jpg.large.jpg\",\n                \"_id\": \"64db108627ee57d00e890c9d\"\n            }\n        ],\n        \"comments\": [\n            {\n                \"user\": {\n                    \"username\": \"welson\",\n                    \"avatarUrl\": \"https://ui-avatars.com/api/?name=welson\",\n                    \"_id\": \"64c2e2b4a088948f13b0f950\",\n                    \"__v\": 0\n                },\n                \"comment\": \"hai\",\n                \"timestamp\": \"2023-08-15T03:58:09.385Z\",\n                \"_id\": \"64daf7d13ee5862dcd2c9cee\"\n            },\n            {\n                \"user\": {\n                    \"username\": \"welson\",\n                    \"avatarUrl\": \"https://ui-avatars.com/api/?name=welson\",\n                    \"_id\": \"64c2e2b4a088948f13b0f950\",\n                    \"__v\": 0\n                },\n                \"comment\": \"Mau beli bang\",\n                \"timestamp\": \"2023-08-15T03:58:18.990Z\",\n                \"_id\": \"64daf7da3ee5862dcd2c9cfb\"\n            },\n            {\n                \"user\": {\n                    \"username\": \"welson\",\n                    \"avatarUrl\": \"https://ui-avatars.com/api/?name=welson\",\n                    \"_id\": \"64c2e2b4a088948f13b0f950\",\n                    \"__v\": 0\n                },\n                \"comment\": \"1 ajah\",\n                \"timestamp\": \"2023-08-15T03:58:22.332Z\",\n                \"_id\": \"64daf7de3ee5862dcd2c9d09\"\n            }\n        ],\n        \"__v\": 8,\n        \"title\": \"AAAAAaaaaa!11!1!!\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Find All Video Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/videos/:videoId/products",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"videos",
+								":videoId",
+								"products"
+							],
+							"variable": [
+								{
+									"key": "videoId",
+									"value": "64daf5ca45e7f2aac470468f",
+									"description": "Video ObjectId string"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Find All Video Products Example Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{apiUrl}}/videos/:videoId/products",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"videos",
+										":videoId",
+										"products"
+									],
+									"variable": [
+										{
+											"key": "videoId",
+											"value": "64daf5ca45e7f2aac470468f",
+											"description": "Video ObjectId string"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2030"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7ee-IvUFndneacgk6oFaD+PyDiD/YAo\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Aug 2023 05:44:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"data\": [\n        {\n            \"title\": \"iPhone 14 Pro 128GB - Space Black\",\n            \"price\": 14000000,\n            \"_id\": \"64c33f0b03ce9022840f5626\",\n            \"thumbnailUrl\": \"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-pro-finish-select-202209-6-1inch-spaceblack?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1663703840510\",\n            \"url\": \"https://www.tokopedia.com/ismileofficial/apple-iphone-14-pro-garansi-resmi-128gb-256gb-512gb-1tb-256gb-space-black\"\n        },\n        {\n            \"title\": \"iPhone 14 Pro 256GB - Space Black\",\n            \"price\": 14000000,\n            \"_id\": \"64c33f0b03ce9022840f5627\",\n            \"thumbnailUrl\": \"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-pro-finish-select-202209-6-1inch-spaceblack?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1663703840510\",\n            \"url\": \"https://www.tokopedia.com/ismileofficial/apple-iphone-14-pro-garansi-resmi-128gb-256gb-512gb-1tb-256gb-space-black\"\n        },\n        {\n            \"title\": \"iPhone 14 Pro 512GB - Space Black\",\n            \"price\": 14000000,\n            \"_id\": \"64c33f0b03ce9022840f5628\",\n            \"thumbnailUrl\": \"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-pro-finish-select-202209-6-1inch-spaceblack?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1663703840510\",\n            \"url\": \"https://www.tokopedia.com/ismileofficial/apple-iphone-14-pro-garansi-resmi-128gb-256gb-512gb-1tb-256gb-space-black\"\n        },\n        {\n            \"title\": \"iPhone 14 Pro 1TB - Space Black\",\n            \"price\": 14000000,\n            \"_id\": \"64c33f0b03ce9022840f5629\",\n            \"thumbnailUrl\": \"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-pro-finish-select-202209-6-1inch-spaceblack?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1663703840510\",\n            \"url\": \"https://www.tokopedia.com/ismileofficial/apple-iphone-14-pro-garansi-resmi-128gb-256gb-512gb-1tb-256gb-space-black\"\n        },\n        {\n            \"title\": \"iPhone 14 Pro 256GB - Yellow\",\n            \"price\": 14200000,\n            \"url\": \"https://www.tokopedia.com/chocoapple/ibox-apple-iphone-14-plus-14plus-14-14-yellow-512gb-256gb-128gb-tam-14-128gb-fa757\",\n            \"thumbnailUrl\": \"https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-iPhone-14-Plus-yellow-2up-230307_inline.jpg.large.jpg\",\n            \"_id\": \"64db108627ee57d00e890c9d\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Find Product by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/videos/:videoId/products/:productId",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"videos",
+								":videoId",
+								"products",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "videoId",
+									"value": "64daf5ca45e7f2aac470468f",
+									"description": "Video ObjectId string"
+								},
+								{
+									"key": "productId",
+									"value": "64db108627ee57d00e890c9d",
+									"description": "Product ObjectId string"
+								}
+							]
+						},
+						"description": "Find a specific video's product"
+					},
+					"response": [
+						{
+							"name": "Find Product by ID Example Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{apiUrl}}/videos/:videoId/products/:productId",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"videos",
+										":videoId",
+										"products",
+										":productId"
+									],
+									"variable": [
+										{
+											"key": "videoId",
+											"value": "64daf5ca45e7f2aac470468f",
+											"description": "Video ObjectId string"
+										},
+										{
+											"key": "productId",
+											"value": "64db108627ee57d00e890c9d",
+											"description": "Product ObjectId string"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "390"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"186-jy1KNWAwPnwNqYlG1stHzvHhJYw\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Aug 2023 05:44:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"data\": {\n        \"title\": \"iPhone 14 Pro 256GB - Yellow\",\n        \"price\": 14200000,\n        \"url\": \"https://www.tokopedia.com/chocoapple/ibox-apple-iphone-14-plus-14plus-14-14-yellow-512gb-256gb-128gb-tam-14-128gb-fa757\",\n        \"thumbnailUrl\": \"https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-iPhone-14-Plus-yellow-2up-230307_inline.jpg.large.jpg\",\n        \"_id\": \"64db108627ee57d00e890c9d\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Product to Video",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"iPhone 14 Pro 256GB - Yellow\",\r\n    \"price\": 14200000,\r\n    \"url\": \"https://www.tokopedia.com/chocoapple/ibox-apple-iphone-14-plus-14plus-14-14-yellow-512gb-256gb-128gb-tam-14-128gb-fa757\",\r\n    \"thumbnailUrl\": \"https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-iPhone-14-Plus-yellow-2up-230307_inline.jpg.large.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/videos/:videoId/products",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"videos",
+								":videoId",
+								"products"
+							],
+							"variable": [
+								{
+									"key": "videoId",
+									"value": "64daf5ca45e7f2aac470468f",
+									"description": "Video ObjectId string"
+								}
+							]
+						},
+						"description": "Add a new product and insert it into video's products array"
+					},
+					"response": [
+						{
+							"name": "Create Product to Video Example Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"iPhone 14 Pro 256GB - Yellow\",\r\n    \"price\": 14200000,\r\n    \"url\": \"https://www.tokopedia.com/chocoapple/ibox-apple-iphone-14-plus-14plus-14-14-yellow-512gb-256gb-128gb-tam-14-128gb-fa757\",\r\n    \"thumbnailUrl\": \"https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-iPhone-14-Plus-yellow-2up-230307_inline.jpg.large.jpg\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{apiUrl}}/videos/:videoId/products",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"videos",
+										":videoId",
+										"products"
+									],
+									"variable": [
+										{
+											"key": "videoId",
+											"value": "64daf5ca45e7f2aac470468f",
+											"description": "Video ObjectId string"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "427"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ab-jpJDi23iqN4esoNw5nYL8GNJncI\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Aug 2023 05:43:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"data\": {\n        \"title\": \"iPhone 14 Pro 256GB - Yellow\",\n        \"price\": 14200000,\n        \"url\": \"https://www.tokopedia.com/chocoapple/ibox-apple-iphone-14-plus-14plus-14-14-yellow-512gb-256gb-128gb-tam-14-128gb-fa757\",\n        \"thumbnailUrl\": \"https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-iPhone-14-Plus-yellow-2up-230307_inline.jpg.large.jpg\",\n        \"_id\": \"64db108627ee57d00e890c9d\"\n    },\n    \"msg\": \"Product created successfully\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "Create Comment to Video",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"james\",\r\n    \"comment\": \"Mantap bang\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/videos/:videoId/comments",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"videos",
+								":videoId",
+								"comments"
+							],
+							"variable": [
+								{
+									"key": "videoId",
+									"value": "64db127a1c0afa21f92b82c7",
+									"description": "Video ObjectId string"
+								}
+							]
+						},
+						"description": "Create a new comment and insert it into video's comments array"
+					},
+					"response": [
+						{
+							"name": "Create Comment to Video Example Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"james\",\r\n    \"comment\": \"Mantap bang\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{apiUrl}}/videos/:videoId/comments",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"videos",
+										":videoId",
+										"comments"
+									],
+									"variable": [
+										{
+											"key": "videoId",
+											"value": "64db127a1c0afa21f92b82c7",
+											"description": "Video ObjectId string"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "277"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"115-tCYB4vCJ5hq6Tt78qBLAqxBTkmI\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Aug 2023 05:53:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"data\": {\n        \"user\": {\n            \"username\": \"james\",\n            \"avatarUrl\": \"https://ui-avatars.com/api/?name=james\",\n            \"_id\": \"64c348b83e970e5b46e3f781\",\n            \"__v\": 0\n        },\n        \"comment\": \"Mantap bang\",\n        \"_id\": \"64db12cc1c0afa21f92b82d4\",\n        \"timestamp\": \"2023-08-15T05:53:16.843Z\"\n    },\n    \"msg\": \"Comment successfully added\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Find All Video Comments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/videos/:videoId/comments",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"videos",
+								":videoId",
+								"comments"
+							],
+							"variable": [
+								{
+									"key": "videoId",
+									"value": "64db127a1c0afa21f92b82c7",
+									"description": "Video ObjectId string"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Find All Video Comments Example Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{apiUrl}}/videos/:videoId/comments",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"videos",
+										":videoId",
+										"comments"
+									],
+									"variable": [
+										{
+											"key": "videoId",
+											"value": "64db127a1c0afa21f92b82c7",
+											"description": "Video ObjectId string"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "244"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f4-2Dg+Hew1tKq9QRnADvC2clp/lyI\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Aug 2023 05:54:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"data\": [\n        {\n            \"user\": {\n                \"username\": \"james\",\n                \"avatarUrl\": \"https://ui-avatars.com/api/?name=james\",\n                \"_id\": \"64c348b83e970e5b46e3f781\",\n                \"__v\": 0\n            },\n            \"comment\": \"Mantap bang\",\n            \"timestamp\": \"2023-08-15T05:53:16.843Z\",\n            \"_id\": \"64db12cc1c0afa21f92b82d4\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

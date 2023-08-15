@@ -70,7 +70,7 @@ export const findProduct = async (req: Request, res: Response) => {
 export const createProduct = async (req: Request, res: Response) => {
   try {
     const { videoId } = req.params
-    const { title, price } = req.body
+    const { title, price, url, thumbnailUrl } = req.body
 
     if (!videoId) {
       throw new Error("Parameter 'videoId' is required")
@@ -84,8 +84,16 @@ export const createProduct = async (req: Request, res: Response) => {
       throw new Error("Parameter 'price' is required")
     }
 
+    if (!url) {
+      throw new Error("Parameter 'url' is required")
+    }
+
+    if (!thumbnailUrl) {
+      throw new Error("Parameter 'thumbnailUrl' is required")
+    }
+
     const videoObjectId = new Types.ObjectId(videoId)
-    const product = await insertProduct(videoObjectId, title, price)
+    const product = await insertProduct(videoObjectId, title, price, url, thumbnailUrl)
 
     if (!product) {
       throw new Error('An error occurred when inserting product')

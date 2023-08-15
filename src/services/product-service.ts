@@ -36,7 +36,13 @@ export const getProductById = async (videoId: Types.ObjectId, productId: Types.O
   }
 }
 
-export const insertProduct = async (videoId: Types.ObjectId, title: string, price: number) => {
+export const insertProduct = async (
+  videoId: Types.ObjectId,
+  title: string,
+  price: number,
+  url: string,
+  thumbnailUrl: string,
+) => {
   try {
     const video = await Video.findById(videoId)
 
@@ -45,9 +51,10 @@ export const insertProduct = async (videoId: Types.ObjectId, title: string, pric
     }
 
     const product = new Product({
-      productUrl: slugify(title, { lower: true }),
       title,
       price,
+      url,
+      thumbnailUrl,
     })
     video.products!.push(product)
 

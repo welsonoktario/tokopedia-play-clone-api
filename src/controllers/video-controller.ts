@@ -49,10 +49,18 @@ export const findVideo = async (req: Request, res: Response) => {
 
 export const createVideo = async (req: Request, res: Response) => {
   try {
-    const { username, thumbnailUrl } = req.body
+    const { username, title, embedUrl, thumbnailUrl } = req.body
 
     if (!username) {
       throw new Error("Parameter 'username' is required")
+    }
+
+    if (!title) {
+      throw new Error("Parameter 'title' is required")
+    }
+
+    if (!embedUrl) {
+      throw new Error("Parameter 'embedUrl' is required")
     }
 
     if (!thumbnailUrl) {
@@ -60,7 +68,7 @@ export const createVideo = async (req: Request, res: Response) => {
     }
 
     const user = await getUserByUsername(username)
-    const video = await insertVideo(user.id, thumbnailUrl)
+    const video = await insertVideo(user.id, title, embedUrl, thumbnailUrl)
 
     if (!video) {
       statusFail({

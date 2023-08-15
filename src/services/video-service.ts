@@ -24,10 +24,17 @@ export const getVideoById = async (videoId: Types.ObjectId) => {
   }
 }
 
-export const insertVideo = async (user: Types.ObjectId, thumbnailUrl: string) => {
+export const insertVideo = async (
+  user: Types.ObjectId,
+  title: string,
+  embedUrl: string,
+  thumbnailUrl: string,
+) => {
   try {
     const video = new Video({
       user,
+      title,
+      embedUrl,
       thumbnailUrl,
     })
 
