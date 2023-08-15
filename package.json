@@ -14,7 +14,8 @@
     "lint:fix": "eslint --ext .ts src --fix",
     "start": "cross-env NODE_ENV=production node dist/index.js",
     "watch-compile": "swc src -w --out-dir dist",
-    "watch-dev": "nodemon --watch \"dist/**/*\" -e js ./dist/index.js"
+    "watch-dev": "nodemon --watch \"dist/**/*\" -e js ./dist/index.js",
+    "postinstall": "npm i cors"
   },
   "dependencies": {
     "cors": "^2.8.5",
